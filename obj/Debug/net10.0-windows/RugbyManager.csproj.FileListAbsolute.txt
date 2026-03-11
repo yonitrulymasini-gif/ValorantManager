@@ -3,7 +3,6 @@ C:\Users\sylva\source\repos\RugbyManager\bin\Debug\net10.0-windows\RugbyManager.
 C:\Users\sylva\source\repos\RugbyManager\bin\Debug\net10.0-windows\RugbyManager.runtimeconfig.json
 C:\Users\sylva\source\repos\RugbyManager\bin\Debug\net10.0-windows\RugbyManager.dll
 C:\Users\sylva\source\repos\RugbyManager\bin\Debug\net10.0-windows\RugbyManager.pdb
-C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.Form1.resources
 C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.csproj.GenerateResource.cache
 C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.AssemblyInfoInputs.cache
@@ -15,3 +14,4 @@ C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\refint\RugbyM
 C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.pdb
 C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.genruntimeconfig.cache
 C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\ref\RugbyManager.dll
+C:\Users\sylva\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.FormMain.resources
