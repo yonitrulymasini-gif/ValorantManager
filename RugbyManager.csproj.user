@@ -25,6 +25,33 @@
     <Compile Update="FormSupprimerJoueur.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RugbyManager\AfficherJoueurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\FormAjouterJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\FormGererEquipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\FormListJoueurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\FormMiseAJourBlessures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\FormModifierJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\FormSupprimerJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RugbyManager\SimulerMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SimulerMatch.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -125,7 +125,7 @@
             // 
             btnSimulerMatch.FlatStyle = FlatStyle.Flat;
             btnSimulerMatch.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSimulerMatch.Location = new Point(848, 441);
+            btnSimulerMatch.Location = new Point(856, 441);
             btnSimulerMatch.Name = "btnSimulerMatch";
             btnSimulerMatch.Size = new Size(194, 68);
             btnSimulerMatch.TabIndex = 7;

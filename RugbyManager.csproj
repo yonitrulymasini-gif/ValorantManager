@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="RugbyManager\**" />
+    <EmbeddedResource Remove="RugbyManager\**" />
+    <None Remove="RugbyManager\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.6.0" />
   </ItemGroup>
 
