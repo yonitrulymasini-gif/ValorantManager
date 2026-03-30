@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace RugbyManager
 {
-    public partial class Form2 : Form
+    public partial class FormSupprimerJoueur : Form
     {
-        public Form2()
+        public FormSupprimerJoueur()
         {
             InitializeComponent();
         }
