@@ -23,10 +23,10 @@ namespace RugbyManager
         private void FormModifierJoueur_Load(object sender, EventArgs e)
         {
             // Charger les postes
-            cmbPoste.Items.Add("duelliste");
-            cmbPoste.Items.Add("controleur");
-            cmbPoste.Items.Add("initiateur");
-            cmbPoste.Items.Add("sentinelle");
+            uiComboBox1.Items.Add("duelliste");
+            uiComboBox1.Items.Add("controleur");
+            uiComboBox1.Items.Add("initiateur");
+            uiComboBox1.Items.Add("sentinelle");
 
             // Charger les joueurs et équipes
             ChargerJoueurs();
@@ -43,14 +43,14 @@ namespace RugbyManager
                     MySqlCommand cmd = new MySqlCommand("SELECT id, nom FROM Joueurs ORDER BY nom", conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
-                    cmbJoueurs.Items.Clear();
-                    cmbJoueurs.DisplayMember = "Text";
-                    cmbJoueurs.ValueMember = "Value";
+                    uiComboBox3.Items.Clear();
+                    uiComboBox3.DisplayMember = "Text";
+                    uiComboBox3.ValueMember = "Value";
 
                     var items = new List<dynamic>();
                     while (reader.Read())
                     {
-                        cmbJoueurs.Items.Add(new { Text = reader.GetString("nom"), Value = reader.GetInt32("id") });
+                        uiComboBox3.Items.Add(new { Text = reader.GetString("nom"), Value = reader.GetInt32("id") });
                     }
                 }
                 catch (Exception ex)
@@ -71,10 +71,10 @@ namespace RugbyManager
                     MySqlCommand cmd = new MySqlCommand("SELECT nom FROM Equipes ORDER BY nom", conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
-                    cmbEquipe.Items.Clear();
+                    uiComboBox2.Items.Clear();
                     while (reader.Read())
                     {
-                        cmbEquipe.Items.Add(reader.GetString("nom"));
+                        uiComboBox2.Items.Add(reader.GetString("nom"));
                     }
                 }
                 catch (Exception ex)
@@ -87,10 +87,10 @@ namespace RugbyManager
 
         private void cmbJoueurs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbJoueurs.SelectedItem == null) return;
+            if (uiComboBox3.SelectedItem == null) return;
 
             // Récupérer l'ID du joueur sélectionné
-            dynamic selected = cmbJoueurs.SelectedItem;
+            dynamic selected = uiComboBox3.SelectedItem;
             joueurIDSelectionne = selected.Value;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -109,12 +109,12 @@ namespace RugbyManager
                     if (reader.Read())
                     {
                         // Remplir les champs avec les données actuelles du joueur
-                        cmbPoste.SelectedItem = reader.GetString("poste");
-                        cmbEquipe.SelectedItem = reader.GetString("equipe");
-                        nudVitesse.Value = reader.GetInt32("vitesse");
-                        nudEndurance.Value = reader.GetInt32("endurance");
-                        nudForce.Value = reader.GetInt32("force_physique");
-                        nudTechnique.Value = reader.GetInt32("technique");
+                        uiComboBox1.SelectedItem = reader.GetString("poste");
+                        uiComboBox2.SelectedItem = reader.GetString("equipe");
+                        uiIntegerUpDown1.Value = reader.GetInt32("vitesse");
+                        uiIntegerUpDown2.Value = reader.GetInt32("endurance");
+                        uiIntegerUpDown3.Value = reader.GetInt32("force_physique");
+                        uiIntegerUpDown4.Value = reader.GetInt32("technique");
                     }
                 }
                 catch (Exception ex)
@@ -134,7 +134,7 @@ namespace RugbyManager
         private void uiButton1_Click(object sender, EventArgs e)
         {
             {
-                if (joueurIDSelectionne == -1 || cmbPoste.SelectedItem == null || cmbEquipe.SelectedItem == null)
+                if (joueurIDSelectionne == -1 || uiComboBox3.SelectedItem == null || uiComboBox2.SelectedItem == null)
                 {
                     MessageBox.Show("Veuillez sélectionner un joueur !", "Erreur",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -150,7 +150,7 @@ namespace RugbyManager
                         // Récupérer l'ID de l'équipe
                         MySqlCommand cmdEquipe = new MySqlCommand(
                             "SELECT id FROM Equipes WHERE nom = @nom", conn);
-                        cmdEquipe.Parameters.AddWithValue("@nom", cmbEquipe.SelectedItem.ToString());
+                        cmdEquipe.Parameters.AddWithValue("@nom", uiComboBox2.SelectedItem.ToString());
                         int equipeID = Convert.ToInt32(cmdEquipe.ExecuteScalar());
 
                         // Mettre à jour le joueur
@@ -160,12 +160,12 @@ namespace RugbyManager
                             endurance = @endurance, force_physique = @force, technique = @technique
                         WHERE id = @id", conn);
 
-                        cmd.Parameters.AddWithValue("@poste", cmbPoste.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@poste", uiComboBox1.SelectedItem.ToString());
                         cmd.Parameters.AddWithValue("@equipeID", equipeID);
-                        cmd.Parameters.AddWithValue("@vitesse", (int)nudVitesse.Value);
-                        cmd.Parameters.AddWithValue("@endurance", (int)nudEndurance.Value);
-                        cmd.Parameters.AddWithValue("@force", (int)nudForce.Value);
-                        cmd.Parameters.AddWithValue("@technique", (int)nudTechnique.Value);
+                        cmd.Parameters.AddWithValue("@vitesse", (int)uiIntegerUpDown1.Value);
+                        cmd.Parameters.AddWithValue("@endurance", (int)uiIntegerUpDown2.Value);
+                        cmd.Parameters.AddWithValue("@force", (int)uiIntegerUpDown3.Value);
+                        cmd.Parameters.AddWithValue("@technique", (int)uiIntegerUpDown4.Value);
                         cmd.Parameters.AddWithValue("@id", joueurIDSelectionne);
 
                         cmd.ExecuteNonQuery();
@@ -191,6 +191,11 @@ namespace RugbyManager
             FormAccueil formMain = new FormAccueil();
             formMain.Show();
             this.Close();
+        }
+
+        private void cmbEquipe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -116,7 +116,7 @@
             uiButton3.FillSelectedColor = Color.White;
             uiButton3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             uiButton3.ForeColor = Color.Black;
-            uiButton3.Location = new Point(792, 438);
+            uiButton3.Location = new Point(792, 529);
             uiButton3.MinimumSize = new Size(1, 1);
             uiButton3.Name = "uiButton3";
             uiButton3.RectColor = Color.White;
@@ -140,7 +140,7 @@
             uiButton4.FillSelectedColor = Color.White;
             uiButton4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             uiButton4.ForeColor = Color.Black;
-            uiButton4.Location = new Point(792, 535);
+            uiButton4.Location = new Point(792, 436);
             uiButton4.MinimumSize = new Size(1, 1);
             uiButton4.Name = "uiButton4";
             uiButton4.RectColor = Color.White;

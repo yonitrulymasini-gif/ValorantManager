@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cmbJoueurs = new ComboBox();
-            cmbPoste = new ComboBox();
-            cmbEquipe = new ComboBox();
-            nudVitesse = new NumericUpDown();
-            nudEndurance = new NumericUpDown();
-            nudForce = new NumericUpDown();
-            nudTechnique = new NumericUpDown();
             uiSmoothLabel1 = new Sunny.UI.UISmoothLabel();
             uiLedLabel7 = new Sunny.UI.UILedLabel();
             uiLedLabel6 = new Sunny.UI.UILedLabel();
@@ -45,77 +38,19 @@
             uiLedLabel1 = new Sunny.UI.UILedLabel();
             uiButton1 = new Sunny.UI.UIButton();
             uiButton6 = new Sunny.UI.UIButton();
+            uiIntegerUpDown4 = new Sunny.UI.UIIntegerUpDown();
+            uiIntegerUpDown3 = new Sunny.UI.UIIntegerUpDown();
+            uiIntegerUpDown2 = new Sunny.UI.UIIntegerUpDown();
             uiIntegerUpDown1 = new Sunny.UI.UIIntegerUpDown();
-            ((System.ComponentModel.ISupportInitialize)nudVitesse).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudEndurance).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudForce).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudTechnique).BeginInit();
+            uiComboBox2 = new Sunny.UI.UIComboBox();
+            uiComboBox1 = new Sunny.UI.UIComboBox();
+            uiComboBox3 = new Sunny.UI.UIComboBox();
             SuspendLayout();
-            // 
-            // cmbJoueurs
-            // 
-            cmbJoueurs.FormattingEnabled = true;
-            cmbJoueurs.Location = new Point(1139, 219);
-            cmbJoueurs.Margin = new Padding(3, 4, 3, 4);
-            cmbJoueurs.Name = "cmbJoueurs";
-            cmbJoueurs.Size = new Size(138, 28);
-            cmbJoueurs.TabIndex = 7;
-            cmbJoueurs.SelectedIndexChanged += cmbJoueurs_SelectedIndexChanged;
-            // 
-            // cmbPoste
-            // 
-            cmbPoste.FormattingEnabled = true;
-            cmbPoste.Location = new Point(1139, 284);
-            cmbPoste.Margin = new Padding(3, 4, 3, 4);
-            cmbPoste.Name = "cmbPoste";
-            cmbPoste.Size = new Size(138, 28);
-            cmbPoste.TabIndex = 8;
-            // 
-            // cmbEquipe
-            // 
-            cmbEquipe.FormattingEnabled = true;
-            cmbEquipe.Location = new Point(1139, 339);
-            cmbEquipe.Margin = new Padding(3, 4, 3, 4);
-            cmbEquipe.Name = "cmbEquipe";
-            cmbEquipe.Size = new Size(138, 28);
-            cmbEquipe.TabIndex = 9;
-            // 
-            // nudVitesse
-            // 
-            nudVitesse.Location = new Point(1140, 400);
-            nudVitesse.Margin = new Padding(3, 4, 3, 4);
-            nudVitesse.Name = "nudVitesse";
-            nudVitesse.Size = new Size(137, 27);
-            nudVitesse.TabIndex = 10;
-            // 
-            // nudEndurance
-            // 
-            nudEndurance.Location = new Point(1139, 521);
-            nudEndurance.Margin = new Padding(3, 4, 3, 4);
-            nudEndurance.Name = "nudEndurance";
-            nudEndurance.Size = new Size(138, 27);
-            nudEndurance.TabIndex = 11;
-            // 
-            // nudForce
-            // 
-            nudForce.Location = new Point(1139, 464);
-            nudForce.Margin = new Padding(3, 4, 3, 4);
-            nudForce.Name = "nudForce";
-            nudForce.Size = new Size(138, 27);
-            nudForce.TabIndex = 12;
-            // 
-            // nudTechnique
-            // 
-            nudTechnique.Location = new Point(1139, 576);
-            nudTechnique.Margin = new Padding(3, 4, 3, 4);
-            nudTechnique.Name = "nudTechnique";
-            nudTechnique.Size = new Size(138, 27);
-            nudTechnique.TabIndex = 13;
             // 
             // uiSmoothLabel1
             // 
             uiSmoothLabel1.Font = new Font("Microsoft Sans Serif", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            uiSmoothLabel1.Location = new Point(544, 35);
+            uiSmoothLabel1.Location = new Point(629, 33);
             uiSmoothLabel1.Name = "uiSmoothLabel1";
             uiSmoothLabel1.RectSize = 15;
             uiSmoothLabel1.Size = new Size(621, 125);
@@ -125,7 +60,7 @@
             // uiLedLabel7
             // 
             uiLedLabel7.Font = new Font("Microsoft Sans Serif", 12F);
-            uiLedLabel7.Location = new Point(561, 569);
+            uiLedLabel7.Location = new Point(648, 537);
             uiLedLabel7.MinimumSize = new Size(1, 1);
             uiLedLabel7.Name = "uiLedLabel7";
             uiLedLabel7.Size = new Size(215, 44);
@@ -135,7 +70,7 @@
             // uiLedLabel6
             // 
             uiLedLabel6.Font = new Font("Microsoft Sans Serif", 12F);
-            uiLedLabel6.Location = new Point(630, 517);
+            uiLedLabel6.Location = new Point(717, 485);
             uiLedLabel6.MinimumSize = new Size(1, 1);
             uiLedLabel6.Name = "uiLedLabel6";
             uiLedLabel6.Size = new Size(151, 44);
@@ -145,7 +80,7 @@
             // uiLedLabel5
             // 
             uiLedLabel5.Font = new Font("Microsoft Sans Serif", 12F);
-            uiLedLabel5.Location = new Point(555, 467);
+            uiLedLabel5.Location = new Point(642, 435);
             uiLedLabel5.MinimumSize = new Size(1, 1);
             uiLedLabel5.Name = "uiLedLabel5";
             uiLedLabel5.Size = new Size(209, 44);
@@ -155,7 +90,7 @@
             // uiLedLabel4
             // 
             uiLedLabel4.Font = new Font("Microsoft Sans Serif", 12F);
-            uiLedLabel4.Location = new Point(595, 416);
+            uiLedLabel4.Location = new Point(682, 384);
             uiLedLabel4.MinimumSize = new Size(1, 1);
             uiLedLabel4.Name = "uiLedLabel4";
             uiLedLabel4.Size = new Size(187, 44);
@@ -165,7 +100,7 @@
             // uiLedLabel3
             // 
             uiLedLabel3.Font = new Font("Microsoft Sans Serif", 12F);
-            uiLedLabel3.Location = new Point(620, 364);
+            uiLedLabel3.Location = new Point(707, 332);
             uiLedLabel3.MinimumSize = new Size(1, 1);
             uiLedLabel3.Name = "uiLedLabel3";
             uiLedLabel3.Size = new Size(162, 44);
@@ -175,7 +110,7 @@
             // uiLedLabel2
             // 
             uiLedLabel2.Font = new Font("Microsoft Sans Serif", 12F);
-            uiLedLabel2.Location = new Point(639, 307);
+            uiLedLabel2.Location = new Point(726, 275);
             uiLedLabel2.MinimumSize = new Size(1, 1);
             uiLedLabel2.Name = "uiLedLabel2";
             uiLedLabel2.Size = new Size(125, 44);
@@ -185,7 +120,7 @@
             // uiLedLabel1
             // 
             uiLedLabel1.Font = new Font("Microsoft Sans Serif", 12F);
-            uiLedLabel1.Location = new Point(657, 257);
+            uiLedLabel1.Location = new Point(744, 225);
             uiLedLabel1.MinimumSize = new Size(1, 1);
             uiLedLabel1.Name = "uiLedLabel1";
             uiLedLabel1.Size = new Size(125, 44);
@@ -202,7 +137,7 @@
             uiButton1.FillSelectedColor = Color.White;
             uiButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             uiButton1.ForeColor = Color.Black;
-            uiButton1.Location = new Point(657, 708);
+            uiButton1.Location = new Point(769, 628);
             uiButton1.MinimumSize = new Size(1, 1);
             uiButton1.Name = "uiButton1";
             uiButton1.RectColor = Color.White;
@@ -226,7 +161,7 @@
             uiButton6.FillSelectedColor = Color.White;
             uiButton6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             uiButton6.ForeColor = Color.Black;
-            uiButton6.Location = new Point(657, 794);
+            uiButton6.Location = new Point(769, 714);
             uiButton6.MinimumSize = new Size(1, 1);
             uiButton6.Name = "uiButton6";
             uiButton6.RectColor = Color.White;
@@ -240,26 +175,137 @@
             uiButton6.TipsFont = new Font("Microsoft Sans Serif", 9F);
             uiButton6.Click += uiButton6_Click;
             // 
+            // uiIntegerUpDown4
+            // 
+            uiIntegerUpDown4.Font = new Font("Microsoft Sans Serif", 12F);
+            uiIntegerUpDown4.Location = new Point(885, 538);
+            uiIntegerUpDown4.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown4.Maximum = 100D;
+            uiIntegerUpDown4.Minimum = 0D;
+            uiIntegerUpDown4.MinimumSize = new Size(1, 16);
+            uiIntegerUpDown4.Name = "uiIntegerUpDown4";
+            uiIntegerUpDown4.Padding = new Padding(5);
+            uiIntegerUpDown4.ShowText = false;
+            uiIntegerUpDown4.Size = new Size(265, 36);
+            uiIntegerUpDown4.TabIndex = 57;
+            uiIntegerUpDown4.Text = "0";
+            uiIntegerUpDown4.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // uiIntegerUpDown3
+            // 
+            uiIntegerUpDown3.Font = new Font("Microsoft Sans Serif", 12F);
+            uiIntegerUpDown3.Location = new Point(886, 484);
+            uiIntegerUpDown3.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown3.Maximum = 100D;
+            uiIntegerUpDown3.Minimum = 0D;
+            uiIntegerUpDown3.MinimumSize = new Size(1, 16);
+            uiIntegerUpDown3.Name = "uiIntegerUpDown3";
+            uiIntegerUpDown3.Padding = new Padding(5);
+            uiIntegerUpDown3.ShowText = false;
+            uiIntegerUpDown3.Size = new Size(265, 36);
+            uiIntegerUpDown3.TabIndex = 58;
+            uiIntegerUpDown3.Text = "0";
+            uiIntegerUpDown3.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // uiIntegerUpDown2
+            // 
+            uiIntegerUpDown2.Font = new Font("Microsoft Sans Serif", 12F);
+            uiIntegerUpDown2.Location = new Point(885, 433);
+            uiIntegerUpDown2.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown2.Maximum = 100D;
+            uiIntegerUpDown2.Minimum = 0D;
+            uiIntegerUpDown2.MinimumSize = new Size(1, 16);
+            uiIntegerUpDown2.Name = "uiIntegerUpDown2";
+            uiIntegerUpDown2.Padding = new Padding(5);
+            uiIntegerUpDown2.ShowText = false;
+            uiIntegerUpDown2.Size = new Size(265, 36);
+            uiIntegerUpDown2.TabIndex = 56;
+            uiIntegerUpDown2.Text = "0";
+            uiIntegerUpDown2.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
             // uiIntegerUpDown1
             // 
             uiIntegerUpDown1.Font = new Font("Microsoft Sans Serif", 12F);
-            uiIntegerUpDown1.Location = new Point(885, 326);
+            uiIntegerUpDown1.Location = new Point(886, 383);
             uiIntegerUpDown1.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown1.Maximum = 100D;
+            uiIntegerUpDown1.Minimum = 0D;
             uiIntegerUpDown1.MinimumSize = new Size(1, 16);
             uiIntegerUpDown1.Name = "uiIntegerUpDown1";
             uiIntegerUpDown1.Padding = new Padding(5);
             uiIntegerUpDown1.ShowText = false;
-            uiIntegerUpDown1.Size = new Size(188, 36);
-            uiIntegerUpDown1.TabIndex = 48;
+            uiIntegerUpDown1.Size = new Size(265, 36);
+            uiIntegerUpDown1.TabIndex = 55;
             uiIntegerUpDown1.Text = "0";
             uiIntegerUpDown1.TextAlignment = ContentAlignment.MiddleCenter;
+            // 
+            // uiComboBox2
+            // 
+            uiComboBox2.DataSource = null;
+            uiComboBox2.FillColor = Color.White;
+            uiComboBox2.Font = new Font("Microsoft Sans Serif", 12F);
+            uiComboBox2.ItemHoverColor = Color.FromArgb(155, 200, 255);
+            uiComboBox2.ItemSelectForeColor = Color.FromArgb(235, 243, 255);
+            uiComboBox2.Location = new Point(884, 334);
+            uiComboBox2.Margin = new Padding(4, 5, 4, 5);
+            uiComboBox2.MinimumSize = new Size(63, 0);
+            uiComboBox2.Name = "uiComboBox2";
+            uiComboBox2.Padding = new Padding(0, 0, 30, 2);
+            uiComboBox2.Size = new Size(262, 36);
+            uiComboBox2.SymbolSize = 24;
+            uiComboBox2.TabIndex = 54;
+            uiComboBox2.TextAlignment = ContentAlignment.MiddleLeft;
+            uiComboBox2.Watermark = "";
+            // 
+            // uiComboBox1
+            // 
+            uiComboBox1.DataSource = null;
+            uiComboBox1.FillColor = Color.White;
+            uiComboBox1.Font = new Font("Microsoft Sans Serif", 12F);
+            uiComboBox1.ItemHoverColor = Color.FromArgb(155, 200, 255);
+            uiComboBox1.ItemSelectForeColor = Color.FromArgb(235, 243, 255);
+            uiComboBox1.Location = new Point(886, 280);
+            uiComboBox1.Margin = new Padding(4, 5, 4, 5);
+            uiComboBox1.MinimumSize = new Size(63, 0);
+            uiComboBox1.Name = "uiComboBox1";
+            uiComboBox1.Padding = new Padding(0, 0, 30, 2);
+            uiComboBox1.Size = new Size(262, 36);
+            uiComboBox1.SymbolSize = 24;
+            uiComboBox1.TabIndex = 53;
+            uiComboBox1.TextAlignment = ContentAlignment.MiddleLeft;
+            uiComboBox1.Watermark = "";
+            // 
+            // uiComboBox3
+            // 
+            uiComboBox3.DataSource = null;
+            uiComboBox3.FillColor = Color.White;
+            uiComboBox3.Font = new Font("Microsoft Sans Serif", 12F);
+            uiComboBox3.ItemHoverColor = Color.FromArgb(155, 200, 255);
+            uiComboBox3.ItemSelectForeColor = Color.FromArgb(235, 243, 255);
+            uiComboBox3.Location = new Point(888, 225);
+            uiComboBox3.Margin = new Padding(4, 5, 4, 5);
+            uiComboBox3.MinimumSize = new Size(63, 0);
+            uiComboBox3.Name = "uiComboBox3";
+            uiComboBox3.Padding = new Padding(0, 0, 30, 2);
+            uiComboBox3.Size = new Size(262, 36);
+            uiComboBox3.SymbolSize = 24;
+            uiComboBox3.TabIndex = 54;
+            uiComboBox3.TextAlignment = ContentAlignment.MiddleLeft;
+            uiComboBox3.Watermark = "";
+            uiComboBox3.SelectedIndexChanged += cmbJoueurs_SelectedIndexChanged;
             // 
             // FormModifierJoueur
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(uiComboBox3);
+            Controls.Add(uiIntegerUpDown4);
+            Controls.Add(uiIntegerUpDown3);
+            Controls.Add(uiIntegerUpDown2);
             Controls.Add(uiIntegerUpDown1);
+            Controls.Add(uiComboBox2);
+            Controls.Add(uiComboBox1);
             Controls.Add(uiButton1);
             Controls.Add(uiButton6);
             Controls.Add(uiLedLabel7);
@@ -270,33 +316,15 @@
             Controls.Add(uiLedLabel2);
             Controls.Add(uiLedLabel1);
             Controls.Add(uiSmoothLabel1);
-            Controls.Add(nudTechnique);
-            Controls.Add(nudForce);
-            Controls.Add(nudEndurance);
-            Controls.Add(nudVitesse);
-            Controls.Add(cmbEquipe);
-            Controls.Add(cmbPoste);
-            Controls.Add(cmbJoueurs);
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormModifierJoueur";
             Text = "FormModifierJoueur";
             Load += FormModifierJoueur_Load;
-            ((System.ComponentModel.ISupportInitialize)nudVitesse).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudEndurance).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudForce).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudTechnique).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private ComboBox cmbJoueurs;
-        private ComboBox cmbPoste;
-        private ComboBox cmbEquipe;
-        private NumericUpDown nudVitesse;
-        private NumericUpDown nudEndurance;
-        private NumericUpDown nudForce;
         private NumericUpDown numericUpDown2;
-        private NumericUpDown nudTechnique;
         private Sunny.UI.UISmoothLabel uiSmoothLabel1;
         private Sunny.UI.UILedLabel uiLedLabel7;
         private Sunny.UI.UILedLabel uiLedLabel6;
@@ -307,6 +335,12 @@
         private Sunny.UI.UILedLabel uiLedLabel1;
         private Sunny.UI.UIButton uiButton1;
         private Sunny.UI.UIButton uiButton6;
+        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown4;
+        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown3;
+        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown2;
         private Sunny.UI.UIIntegerUpDown uiIntegerUpDown1;
+        private Sunny.UI.UIComboBox uiComboBox2;
+        private Sunny.UI.UIComboBox uiComboBox1;
+        private Sunny.UI.UIComboBox uiComboBox3;
     }
 }
