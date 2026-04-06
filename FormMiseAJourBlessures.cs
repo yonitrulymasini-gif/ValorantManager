@@ -16,6 +16,7 @@ namespace RugbyManager
         public FormMiseAJourBlessures()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormMiseAJourBlessures_Load(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace RugbyManager
                         );
                     }
 
-                    dgvJoueurs.DataSource = dt;
+                    uiDataGridView1.DataSource = dt;
 
                     if (dt.Rows.Count == 0)
                     {
@@ -71,8 +72,14 @@ namespace RugbyManager
                 }
             }
         }
+        private void uiButton6_Click(object sender, EventArgs e)
+        {
+            FormAccueil formMain = new FormAccueil();
+            formMain.Show();
+            this.Close();
+        }
 
-        private void btnMajBlessures_Click(object sender, EventArgs e)
+        private void uiButton1_Click(object sender, EventArgs e)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -106,14 +113,5 @@ namespace RugbyManager
                 }
             }
         }
-
-        private void btnRetour_Click(object sender, EventArgs e)
-        {
-            FormAccueil formMain = new FormAccueil();
-            formMain.Show();
-            this.Close();
-        }
-
-      
     }
 }

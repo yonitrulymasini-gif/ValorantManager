@@ -16,6 +16,7 @@ namespace RugbyManager
         public FormSimulerMatch()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void SimulerMatch_Load(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace RugbyManager
                         );
                     }
 
-                    dgvJoueurs.DataSource = dt;
+                    uiDataGridView1.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
@@ -72,8 +73,19 @@ namespace RugbyManager
                 }
             }
         }
+        private void txtAdversaire_TextChanged(object sender, EventArgs e)
+        {
 
-        private void btnSimuler_Click(object sender, EventArgs e)
+        }
+
+        private void uiButton6_Click(object sender, EventArgs e)
+        {
+            FormAccueil formMain = new FormAccueil();
+            formMain.Show();
+            this.Close();
+        }
+
+        private void uiButton1_Click(object sender, EventArgs e)
         {
             if (txtAdversaire.Text == "")
             {
@@ -82,7 +94,7 @@ namespace RugbyManager
                 return;
             }
 
-            if (dgvJoueurs.Rows.Count < 1)
+            if (uiDataGridView1.Rows.Count < 1)
             {
                 MessageBox.Show("Pas assez de joueurs disponibles !", "Erreur",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -92,7 +104,7 @@ namespace RugbyManager
             // Calculer la moyenne des stats de l'équipe
             double totalStats = 0;
             int nbJoueurs = 0;
-            foreach (DataGridViewRow row in dgvJoueurs.Rows)
+            foreach (DataGridViewRow row in uiDataGridView1.Rows)
             {
                 if (row.IsNewRow) continue;
                 int vitesse = Convert.ToInt32(row.Cells["Vitesse"].Value);
@@ -139,7 +151,7 @@ namespace RugbyManager
                     cmdMatch.ExecuteNonQuery();
 
                     // Mettre à jour les stats et blessures
-                    foreach (DataGridViewRow row in dgvJoueurs.Rows)
+                    foreach (DataGridViewRow row in uiDataGridView1.Rows)
                     {
                         if (row.IsNewRow) continue;
                         int id = Convert.ToInt32(row.Cells["ID"].Value);
@@ -190,14 +202,5 @@ namespace RugbyManager
                 }
             }
         }
-
-        private void btnRetour_Click(object sender, EventArgs e)
-        {
-            FormAccueil formMain = new FormAccueil();
-            formMain.Show();
-            this.Close();
-        }
-
-        private void lblAdversaire_Click(object sender, EventArgs e) { }
     }
 }

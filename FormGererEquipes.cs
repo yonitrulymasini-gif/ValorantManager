@@ -16,6 +16,7 @@ namespace RugbyManager
         public FormGererEquipes()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormGererEquipes_Load(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace RugbyManager
                         );
                     }
 
-                    dgvEquipes.DataSource = dt;
+                    uiDataGridView1.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
@@ -54,8 +55,56 @@ namespace RugbyManager
                 }
             }
         }
+        private void uiButton6_Click(object sender, EventArgs e)
+        {
+            FormAccueil formMain = new FormAccueil();
+            formMain.Show();
+            this.Close();
+        }
 
-        private void btnAjouter_Click(object sender, EventArgs e)
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            if (uiDataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Veuillez sélectionner une équipe !", "Erreur",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = Convert.ToInt32(uiDataGridView1.SelectedRows[0].Cells["ID"].Value);
+            string nom = uiDataGridView1.SelectedRows[0].Cells["Nom"].Value.ToString();
+
+            DialogResult confirm = MessageBox.Show(
+                $"Voulez-vous vraiment supprimer l'équipe '{nom}' ?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        MySqlCommand cmd = new MySqlCommand(
+                            "DELETE FROM Equipes WHERE id = @id", conn);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Équipe supprimée !", "Succès",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        AfficherEquipes(); // actualise la liste
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erreur : " + ex.Message, "Erreur",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void uiButton2_Click(object sender, EventArgs e)
         {
             if (txtNomEquipe.Text == "")
             {
@@ -84,57 +133,6 @@ namespace RugbyManager
                 {
                     MessageBox.Show("Erreur : " + ex.Message, "Erreur",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-     
-
-        private void btnRetour_Click(object sender, EventArgs e)
-        {
-            FormAccueil formMain = new FormAccueil();
-            formMain.Show();
-            this.Close();
-        }
-
-        private void btnSupprimer_Click(object sender, EventArgs e)
-        {
-            if (dgvEquipes.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Veuillez sélectionner une équipe !", "Erreur",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int id = Convert.ToInt32(dgvEquipes.SelectedRows[0].Cells["ID"].Value);
-            string nom = dgvEquipes.SelectedRows[0].Cells["Nom"].Value.ToString();
-
-            DialogResult confirm = MessageBox.Show(
-                $"Voulez-vous vraiment supprimer l'équipe '{nom}' ?",
-                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirm == DialogResult.Yes)
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    try
-                    {
-                        conn.Open();
-                        MySqlCommand cmd = new MySqlCommand(
-                            "DELETE FROM Equipes WHERE id = @id", conn);
-                        cmd.Parameters.AddWithValue("@id", id);
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Équipe supprimée !", "Succès",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        AfficherEquipes(); // actualise la liste
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erreur : " + ex.Message, "Erreur",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
             }
         }

@@ -103,10 +103,10 @@ server=127.0.0.1;user=appuser;password=motdepasse;database=valorant_manager;
 
 Projet réalisé dans un objectif pédagogique et d’apprentissage du développement backend en C#.
 
+Yoni Truly-Masini et Hendrix 
+
 ---
 
 ## 📄 Licence
 
 Ce projet est open-source et libre d’utilisation.
-
-Yoni Truly-Masini et Hendrix 
