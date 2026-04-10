@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎮 Valorant Manager
 
 ## 📌 Description
@@ -110,3 +111,6 @@ Yoni Truly-Masini et Hendrix
 ## 📄 Licence
 
 Ce projet est open-source et libre d’utilisation.
+=======
+# ValorantManager
+>>>>>>> c3ba5c9281057204e5308cd74a9b43225d3409cb
